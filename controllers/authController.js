@@ -89,7 +89,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     "host"
   )}/users/resetPassword/${resetToken}`;
 
-  const message = `Forgot your password? Please link on the link below to reset your password.\n https://storyonhoops.netlify.app/reset/${resetToken}.\nIf you didn't forget your password, please ignore this email!`;
+  const message = `Forgot your password? Please link on the link below to reset your password.\n https://url-shortenerapp.netlify.app/reset/${resetToken}.\nIf you didn't forget your password, please ignore this email!`;
 
   try {
     await sendEmail({
@@ -243,7 +243,7 @@ exports.activateEmail = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
   console.log(req.body);
   const userId = req.params.id;
-  const activateURL = `http://localhost:3000/authenticate/${userId}`;
+  const activateURL = `https://url-shortenerapp.netlify.app/authenticate/${userId}`;
   const message = `Please activate your account by clicking on the link below.\n ${activateURL}`;
 
   await sendEmail({
